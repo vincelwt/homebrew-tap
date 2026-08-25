@@ -1,12 +1,12 @@
 cask "gloomberb" do
-  version "0.11.0"
-  sha256 "c07bbe195144e758d014cae86d637122b0c12b2152f6f2b7944c9e7d6750030f"
+  version "0.11.1"
+  sha256 "edac8cf4b9cbe502417013cef21099084e8deeb1d2a98fac7322bdbdfc4a9a12"
 
   url "https://github.com/gloom-sh/gloomberb/releases/download/v#{version}/stable-macos-arm64-Gloomberb.app.zip",
       verified: "github.com/gloom-sh/gloomberb/"
   name "Gloomberb"
   desc "Open-source finance terminal"
-  homepage "https://gloomberb.com"
+  homepage "https://gloom.sh"
 
   livecheck do
     url :url
