@@ -1,10 +1,10 @@
 cask "gloomberb" do
-  version "0.18.4"
-  sha256 "c85c171dcfc8177383a3b18b7dc20e5ea8dbb196d3548ca1abd73d41b2d64189"
+  version "0.18.5"
+  sha256 "c4ded311392af6c67d20a330c94b24e13e40bdc93eb686fa97830c4f90f8ad29"
 
   # No `verified:` here: Homebrew checks a GitHub release URL against the
   # homepage on its own now and warns that the parameter is deprecated (#916).
-  url "https://github.com/gloom-sh/gloomberb/releases/download/v#{version}/stable-macos-arm64-Gloomberb.app.zip"
+  url "https://github.com/gloom-sh/gloomberb/releases/download/v#{version}/stable-macos-arm64-Gloom.app.zip"
   name "Gloom"
   desc "Open-source finance terminal"
   homepage "https://gloom.sh"
@@ -20,11 +20,12 @@ cask "gloomberb" do
   # installs an app on Intel Macs that dies with "Bad CPU type in executable".
   depends_on arch: :arm64
 
-  # The app keeps its bundle name: its updater finds the new build by it.
-  app "Gloomberb.app"
-  binary "#{appdir}/Gloomberb.app/Contents/Resources/gloom", target: "gloom"
-  # The command's name before 0.19, kept for scripts and habits.
-  binary "#{appdir}/Gloomberb.app/Contents/Resources/gloomberb", target: "gloomberb"
+  # Gloomberb.app before the rename. An upgrade from such a version removes
+  # it and installs this; the app leaves a Homebrew copy to Homebrew.
+  app "Gloom.app"
+  binary "#{appdir}/Gloom.app/Contents/Resources/gloom", target: "gloom"
+  # The command's name before 0.18.4, kept for scripts and habits.
+  binary "#{appdir}/Gloom.app/Contents/Resources/gloomberb", target: "gloomberb"
 
   uninstall quit: "com.vincelwt.gloomberb"
 
