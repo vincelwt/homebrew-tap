@@ -1,6 +1,6 @@
 cask "gloomberb" do
-  version "0.18.5"
-  sha256 "c4ded311392af6c67d20a330c94b24e13e40bdc93eb686fa97830c4f90f8ad29"
+  version "0.19.0"
+  sha256 "326560cb8f7a5a8d32e2f0dcdb0271a7bbd5ff4675dba43257ef84ba32992727"
 
   # No `verified:` here: Homebrew checks a GitHub release URL against the
   # homepage on its own now and warns that the parameter is deprecated (#916).
@@ -27,7 +27,9 @@ cask "gloomberb" do
   # The command's name before 0.18.4, kept for scripts and habits.
   binary "#{appdir}/Gloom.app/Contents/Resources/gloomberb", target: "gloomberb"
 
-  uninstall quit: "com.vincelwt.gloomberb"
+  # Quits the app under either of its bundle identifiers, whichever the
+  # installed copy carries.
+  uninstall quit: ["com.vincelwt.gloomberb", "sh.gloom.desktop"]
 
   zap trash: "~/.gloomberb"
 end
