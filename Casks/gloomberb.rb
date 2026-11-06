@@ -1,6 +1,6 @@
 cask "gloomberb" do
-  version "0.20.1"
-  sha256 "cc2779c6aa5200938bc21918091d191fb8d7ec100c8ecc291b7b7fa1f994b2ee"
+  version "0.20.2"
+  sha256 "f5f409315374103e04f80674340c29d96433c60c6c75fb6112c4dcfbaaf2c208"
 
   # No `verified:` here: Homebrew checks a GitHub release URL against the
   # homepage on its own now and warns that the parameter is deprecated (#916).
